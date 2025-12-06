@@ -1,0 +1,115 @@
+html, body{ min-height: 100vh;}
+body{ font-family: sans-serif; background-color: #1b1b1b;}
+ul{
+    color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 2px rgba(255, 255, 255, 0.288);
+    top: 0;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, 0px);
+    background: #1b1b1b;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+ul li{ margin: 0 10px;}
+ul input, ul select, ul button{color: #000;}
+ul input{border: solid 1px #efefef;}
+ul button{ border: solid 1px #efefef; padding: 10px; background-color :#4172FA; border-radius:10px; color:#fff;}
+
+div p{color: #fff;}
+
+figure.zoom {
+  background-position: 50% 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+figure.zoom img:hover {
+  opacity: 0;
+}
+figure.zoom img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
+}
+
+.imgsContainer{
+  padding-top: 20px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 65vw 32vw;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "big small1"
+    "big small2";
+    align-items: center;
+  justify-content: space-evenly;
+  border: none;
+}
+
+.vue1{
+    grid-template-areas: 
+    "big small1"
+    "big small2";
+}
+
+.vue2{
+    grid-template-areas: 
+    "small1 small2"
+    "small1 big";
+}
+
+.vue3{
+    grid-template-areas: 
+    "small2 big"
+    "small2 small1";
+}
+
+.imgsContainer div{
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+    border-radius: 10px;
+    border: solid 2px rgba(255, 255, 255, 0.288);
+}
+
+.imgsContainer div:nth-child(1){
+  grid-area: big;
+}
+
+.imgsContainer div:nth-child(2){
+  grid-area: small1;
+}
+
+.imgsContainer div:nth-child(3){
+  grid-area: small2;
+}
+
+@media only screen and (orientation: portrait){
+    .imgsContainer{
+        padding-top: 0px;
+        display: flex;
+        flex-flow: column;
+        padding-bottom: 100px;
+    }
+
+    .imgsContainer div{
+        margin: 10px;
+    }
+
+    ul li:first-child{ display: none;}
+
+   ul{
+        top: auto;
+        bottom: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+}
